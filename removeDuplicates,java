@@ -1,9 +1,13 @@
 class Solution {
+    //去掉排序数组中重复的值
     public int removeDuplicates(int[] nums) {
+        //判断数组中是否有值
         if(nums.length == 0) return 0;
+        //temp用来存放当前遍历到的最大的值,count用来标记有效数据的索引
         int temp = nums[0], count = 0;
         for(int i = 0; i < nums.length; i++) {
             if(temp != nums[i]) {
+                //将索引为i的数据放到当前有效索引的后一位
                 nums[++count] = nums[i];
                 temp = nums[i];
             }
